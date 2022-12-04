@@ -38,12 +38,12 @@ public partial class MainPage : ContentPage
 
 	private void OnCalculate(object sender, EventArgs e)
 	{
-        string result = "ESSA";
+        string result = "";
 
         if (this.input.Text != null)
 		{
-            Int64 firstNumber = Int64.Parse(input.Text.Split(this.mathOperator)[0]);
-            Int64 secondNumber = Int64.Parse(input.Text.Split(this.mathOperator)[1]);
+            Double firstNumber = Double.Parse(input.Text.Split(this.mathOperator)[0]);
+            Double secondNumber = Double.Parse(input.Text.Split(this.mathOperator)[1]);
             switch (this.mathOperator)
             {
                 case "+":
@@ -56,7 +56,10 @@ public partial class MainPage : ContentPage
 					result = (firstNumber * secondNumber).ToString();
 					break;
                 case "÷":
-                    result = (firstNumber / secondNumber).ToString();
+					if(secondNumber != 0)
+					{
+                        result = (firstNumber / secondNumber).ToString();
+                    }
                     break;
                 case "%":
                     result = (firstNumber % secondNumber).ToString();
@@ -73,7 +76,6 @@ public partial class MainPage : ContentPage
 	{
 		if(this.input.Text != null)
 		{
-			if()
 			Int64 tmp = Int64.Parse(this.input.Text);
 			tmp *= -1;
 			this.input.Text = tmp.ToString();
@@ -81,3 +83,5 @@ public partial class MainPage : ContentPage
 	}
 }
 
+// <Button Text = "+/-" Grid.Row="1" Grid.Column="1" FontSize="Large" TextColor="White" Background="#2196F3"
+//             Clicked="OnSignChange"/>

@@ -19,10 +19,10 @@
                  Grid.ColumnSpan="4"
                  />
 
-        <Button Text="C" Grid.Row="1" Grid.Column="0" TextColor="White" BackgroundColor="#F44336" FontSize="Large"
+        <Button Text="C" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" TextColor="White" BackgroundColor="#F44336" FontSize="Large"
                 Clicked="OnClear"/>
-        <Button Text="+/-" Grid.Row="1" Grid.Column="1" FontSize="Large" TextColor="White" Background="#2196F3"
-                Clicked="OnSignChange"/>
+        
+
         <Button Text="%" Grid.Row="1" Grid.Column="2" FontSize="Large" TextColor="White" Background="#2196F3"
                 Clicked="OnSelectOperator"/>
 
